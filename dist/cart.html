@@ -11,17 +11,6 @@
     <link rel = "icon" href="images/onep.ico" type = "image/x-icon">
 </head>
 <style>
-    /* <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Styles from Boostrap and the css file -->
-    
-    <title>Cart</title> <!--  Page Name-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-</head> */
     /* Login css content */
     .loginthing{
       border: none;
@@ -169,143 +158,47 @@
       font-size: 13px;
       margin-bottom: 0;
     }
-
-  /* .loginthing:hover{     color: whitesmoke;    }    */
 </style>
-<!-- <style>
-    .carttablebox{
-        background-color: aqua;
-    /* main page content */
-    #container {
-      position: center;
-      margin-top: -20px;
-      height: 100vh;
-      background: url('./images/baratie.jpeg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      padding-top: 30px;
-      padding-left: 50px;
-      padding-right: 50px;
-      
-    }
-  
-    #background {
-      background: black;
-      padding: 15px;
-      border-radius: 3px;
-      height: 810px;
-      width: 1440px;
-      margin-top: -50px;
-      margin-left: -50px;
-      background: rgba(0,0,0,0.6);
-    }
-  
-    #content h1 {
-      color: #ffffff;
-      font-size: 100px;
-      left: 0;
-      line-height: 200px;
-      margin-top: -150px;
-      position: absolute;
-      text-align: center;
-      top: 50%;
-      width: 100%;
-      font-family:cursive;
-    }
-    
-    a.shop-now-button{
-      left: 40%;
-      top: 85%;
-      height: 70px;
-      width: 300px;
-      font-size: 30px;
-      margin-top: -150px;
-      position: absolute;
-      display:inline-block;
-      padding:0.35em 1.2em;
-      border:0.1em solid #FFFFFF;
-      margin:0 0.3em 0.3em 0;
-      border-radius:0.12em;
-      box-sizing: border-box;
-      text-decoration:none;
-      font-family:'Roboto',sans-serif;
-      font-weight:300;
-      color:#FFFFFF;
-      text-align:center;
-      transition: all 0.2s;
-    }
-    a.shop-now-button:hover{
-      color:#000000;
-      background-color:#FFFFFF;
-      text-decoration: none;
-    }
-    @media all and (max-width:30em){
-      a.shop-now-button{
-        display:block;
-        margin:0.4em auto;
-      }
-    }
-  
-    .footer-dark {
-      padding: 30px 0;
-      color: #f0f9ff;
-      background-color: #282d32;
-    }
-  
-    .footer-dark .item.social {
-      text-align: center;
-    }
-    
-    @media (max-width:991px) {
-      .footer-dark .item.social {
-        text-align: center;
-        margin-top: 20px;
-      }
-    }
-  
-    .footer-dark .item.social > a {
-      font-size: 20px;
-      width: 36px;
-      height: 36px;
-      line-height: 36px;
-      display: inline-block;
-      text-align: center;
-      border-radius: 50%;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.4);
-      margin: 0 8px;
-      color: #fff;
-      opacity: 0.75;
-    }
-    
-    .footer-dark .item.social > a:hover {
-      opacity: 0.9;
-      text-decoration: none;
-    }
-  
-    .footer-dark .item.social > a:link {
-      text-decoration: none;
-    }
-  
-    .footer-dark .copyright {
-      text-align: center;
-      padding-top: 24px;
-      opacity: 0.3;
-      font-size: 13px;
-      margin-bottom: 0;
-    }
-    p {
-    background-image: url('https://imagenes.20minutos.es/files/image_990_v3/uploads/imagenes/2022/06/07/concept-art-del-baratie-en-one-piece.jpeg');
-    }
-  </style>
- <!--
-<style>
-    .cart_items_box{
-        background-color: rgb(51, 255, 0);
-        border: 10px;
-        text-align: right\
-    }
 
-</style> -->
+<style>
+  .cart_items_box {
+    background-color: rgb(233, 213, 196);
+    border: 2px solid rgb(139, 59, 59);
+    margin: 20px;
+    padding: 20px;
+    font-family: monospace;
+    font-style: italic;
+  }
+
+  .total {
+    background-color: rgb(233, 213, 196);
+    color: white;
+    border: 2px solid rgb(139, 59, 59);
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .body{
+  background-image: url("https://imagenes.20minutos.es/files/image_990_v3/uploads/imagenes/2022/06/07/concept-art-del-baratie-en-one-piece.jpeg");
+  background-size: cover;
+}
+
+  .cart_item{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    width: 75%;
+  }
+
+  .order {
+    color: #000000;
+    border-radius: 5px;
+  }
+
+  .order:hover {
+    opacity: 80%;
+  }
+
+  </style>
 <body>
 </style>
 <!-- Body Section -->
@@ -364,23 +257,29 @@
     </div>
   </div>
 
-    
-    <h1>Welcome to Cart</h1>
-    <h2>Cart Items</h2>
+    <!-- Cart Item Table-->
     <div class="cart_items_box">
+      <h1 class="heading">
+        <p style="color:rgba(0, 0, 0, 0.911);font-size:40px;"> <b>My Cart</b> </p> 
+      </h1>
+      <hr style="height:1px;border-width:1px;background-color:rgb(139, 59, 59);margin-bottom:5rem;">
         <table class="cart_item" id="item_list">
             <tr>
-                <th>Name:</th>
-                <th>Price:</th>
-                <th>Quantity:</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th><th >Quantity</th></th>
             </tr>
-        </table> 
-        <p id="total"> <b>Total:</b> </p>           
+        </table>        
+    </div>
+
+    <div class="total">
+      <p style="color:rgba(0, 0, 0, 0.911);font-size:25px;" id="total"> <b>Total:</b> </p>
+      <button class="order"id="order">Complete order</button>
     </div>
     <script src="cart.bundle.js"></script>
-    <!-- <div class="footer-dark">
+    <div class="footer-dark">
         <p class="copyright">El-Baratie-Mexicano.com &copy; 2022</p>
-    </div> -->
+    </div>
     
   
 
