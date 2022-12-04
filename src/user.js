@@ -1,26 +1,18 @@
 
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from "firebase/analytics";
 
 import {
     getFirestore,
     collection,
     doc,
-    getDoc,
-    onSnapshot,
     getDocs,
-    DocumentSnapshot,
-    updateDoc,
-    setDoc,
-    waitForPendingWrites,
+    updateDoc
 } from 'firebase/firestore'
 
 import {
     getAuth,
     onAuthStateChanged,
-    updateCurrentUser,
     updateProfile,
-    updateEmail,
     updatePassword
 } from "firebase/auth";
 
@@ -129,11 +121,9 @@ function editUsername(pAuth, newName){
         console.log("Could not update your name!")
         console.log(error);
     });
-    return;
 }
 
 async function editUsernameInFirebase(pAuth, newName){
-    let userData = getUserData(pAuth);
     await updateDoc(doc(db, 'Users', pAuth.uid), {
         Name: newName
     });
@@ -147,11 +137,9 @@ function editPassword(pAuth, newPassword){
         console.log("Could not update your password!");
         console.log(error);
     });
-    return;
 }
 
 async function editPasswordInFirebase(pAuth, newPassword){
-    let userData = getUserData(pAuth);
     await updateDoc(doc(db, 'Users', pAuth.uid), {
         password: newPassword
     });
@@ -167,11 +155,9 @@ function editEmail(pAuth, newEmail){
         console.log("Could not update your password!");
         console.log(error);
     });
-    return;
 }
 
 async function editEmailInFirebase(pAuth, newEmail){
-    let userData = getUserData(pAuth);
     await updateDoc(doc(db, 'Users', pAuth.uid), {
         email: newEmail
     });
@@ -190,10 +176,8 @@ function displayUserData(user){
         console.log(snapshot.docs)
         snapshot.docs.forEach(
             function(ChildSnapshot){
-                let name = ChildSnapshot.id;
                 let userName = ChildSnapshot.get('Name');
                 let userEmail = ChildSnapshot.get('email');
-                let userPassword = ChildSnapshot.get('password');
                 if(user.email == userEmail){
                     displayName(userName);
                     displayEmail(userEmail)
