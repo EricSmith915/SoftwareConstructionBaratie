@@ -48,14 +48,12 @@ function updateUserData(user){
 
     var el1 = document.getElementById('editEmail');
     if(el1){
-        //functionality of signing in the user after clicking log in
         el1.addEventListener("keypress", function(event){
             if (event.key === "Enter"){
                 event.preventDefault();
                 document.getElementById("editEmail").click();
             }
         })
-        //functionality for user authorization
         el1.addEventListener("click", (event)=>{
             event.preventDefault();
             const newEmail = document.getElementById("editEmailLive").value;
@@ -68,14 +66,12 @@ function updateUserData(user){
 
     var el2 = document.getElementById('editName');
     if(el2){
-        //functionality of signing in the user after clicking log in
         el2.addEventListener("keypress", function(event){
             if (event.key === "Enter"){
                 event.preventDefault();
                 document.getElementById("editName").click();
             }
         })
-        //functionality for user authorization
         el2.addEventListener("click", (event)=>{
             event.preventDefault();
             const newName = document.getElementById("editNameLive").value;
@@ -88,14 +84,12 @@ function updateUserData(user){
 
     var el3 = document.getElementById('editPassword');
     if(el3){
-        //functionality of signing in the user after clicking log in
         el3.addEventListener("keypress", function(event){
             if (event.key === "Enter"){
                 event.preventDefault();
                 document.getElementById("editPassword").click();
             }
         })
-        //functionality for user authorization
         el3.addEventListener("click", (event)=>{
             event.preventDefault();
             const password = document.getElementById("editPasswordLive").value;
@@ -195,7 +189,6 @@ function getUserData(user){
         console.log(snapshot.docs)
         snapshot.docs.forEach(
             function(ChildSnapshot){
-                let name = ChildSnapshot.id;
                 let userName = ChildSnapshot.get('Name');
                 let userEmail = ChildSnapshot.get('email');
                 let userPassword = ChildSnapshot.get('password');
